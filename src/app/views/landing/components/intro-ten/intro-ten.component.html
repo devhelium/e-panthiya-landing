@@ -1,0 +1,43 @@
+<!-- <section id="intro-wrap" class="intro-ten-Wrap bg-primary text-left text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 intro-ten-LeftSection pb-3">
+                <h1 class=" font-weight-bold text-white text-42 mb-3 t-shadow">Bring learning to people</h1>
+                <p class=" text-20 mb-4">“We need to bring learning to people instead of people to learning.” – Elliot Masie </p>
+                <div class=" mb-5 lead">
+                    <ul class="list-inline">
+                        <li class=" mb-3 ">
+                            <i class="eva eva-checkmark-outline mr-2 text-warning"></i>
+                                Engaging and effective training
+                        </li>
+                        <li class="mb-3">
+                            <i class=" eva eva-checkmark-outline mr-2 text-warning"></i> 
+                                The most versatile course experience
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 intro-ten-RightSection d-flex align-items-center">
+                <div class="intro-ten-ProductImage">
+                    <img src="./assets/images/landing/svg/version.png" class="img-responsive" alt=""
+                        [@animate]="{value:'*',params:{x:'200px',opacity:'0',delay:'100ms', duration: '500ms'}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay">
+     </div>
+
+</section> -->
+<ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)" style="margin-top: 60px;">
+  <ng-template ngbSlide *ngFor="let img of images; index as i">
+    <div class="carousel-caption">
+      <!-- <h3>My slide {{i + 1}} title</h3> -->
+    </div>
+    <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+      <div class="picsum-img-wrapper">
+        <img [src]="img" alt="My image {{i + 1}} description">
+      </div>
+    </a>
+  </ng-template>
+</ngb-carousel>

@@ -1,0 +1,60 @@
+<div class="card o-hidden" [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay:'100ms', duration: '400ms'}}">
+    <div class="row">
+        <div class="col-md-6 text-center " style="background-size: cover;background-image: url(./assets/images/landing/Bg/register.png)">
+            <div class="pl-3 auth-right">
+                <button class="btn btn-primary btn-block btn-icon" routerLink="/sessions/signin"> 
+                    Sign in with Email
+                </button>
+                <button class="btn btn-primary btn-block btn-icon btn-google">
+                    Sign in with Google
+                </button>
+                <button class="btn btn-primary btn-block btn-icon btn-facebook">
+                    Sign in with Facebook
+                </button>
+                <div class="mt-5">
+                    <a class="text-white" href="" routerLink="/sessions/signin"><u class="forgot-password">Already have an Account</u></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-4">
+                <div class="auth-logo text-center mb-4">
+                    <img src="./assets/images/landing/lOGO_d/logo_white.png" alt="">
+                </div>
+                <h1 class="mb-3 text-18" style="text-align: center;">Sign Up with E-Panthiya</h1>
+                <!-- <p class="mb-4 text-muted font-small">Lorem ipsum dolor sit amet.</p> -->
+                <form action="">
+                    <div class="form-group">
+                        <label for="firstname">First name</label>
+                        <input id="firstname" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last name</label>
+                        <input id="lastname" class="form-control" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input id="email" class="form-control" type="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="type">User Type</label>
+                        <select name="type" id="type" class="form-control">
+                        <option value="">--Select Type--</option>
+                        <option value="student">Student</option>
+                        <option value="parent">Parent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" class="form-control" type="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="re-password">Password</label>
+                        <input id="re-password" class="form-control" type="password">
+                    </div>
+                    <button class="btn btn-primary btn-block mt-2">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
