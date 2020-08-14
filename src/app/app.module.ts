@@ -22,7 +22,6 @@ import { from } from 'rxjs';
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
     AppRoutingModule,
     
 

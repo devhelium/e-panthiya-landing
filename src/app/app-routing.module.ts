@@ -3,31 +3,13 @@ import { LandingLayoutComponent} from "./shared/components/layouts/landing-layou
 import { NgModule} from "@angular/core";
 import { Routes, RouterModule} from "@angular/router";
 import { AuthLayoutComponent} from "./shared/components/layouts/auth-layout/auth-layout.component";
+import { DashboardLayoutComponent } from "./shared/components/layouts/dashboard-layout/dashboard-layout.component";
 
 
 
 const routes: Routes = [
   { 
     path: '',
-    // comment out this 2 line to make any landing demo as your root .
-    // redirectTo: "landing/demos",
-
-    // pathMatch: "full",
-
-    /** 
-      uncomment this to make root url as one of landing page .
-      and open landing-routing.module.ts to select which demo version 
-      you want as your root
-
-      like : 
-      in landing-routing.module.ts**/
-    // {
-      // path: "v3",
-      // component: LandingV3Component
-    // },
-    
-    
-
     component: LandingLayoutComponent,
      children: [
        {
@@ -57,6 +39,17 @@ const routes: Routes = [
         path: 'landing',
         loadChildren: () =>
           import('./views/landing/landing.module').then((m) => m.LandingModule),
+      },
+    ],
+  },
+  {
+    path: '',
+    component: DashboardLayoutComponent,
+    children: [
+      {
+        path: 'user',
+        loadChildren: () =>
+          import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule),
       },
     ],
   },

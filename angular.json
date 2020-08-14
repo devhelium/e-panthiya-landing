@@ -37,7 +37,13 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/assets-dashboard/bundles/libscripts.bundle.js",
+              "src/assets/assets-dashboard/bundles/vendorscripts.bundle.js",
+              "src/assets/assets-dashboard/bundles/c3.bundle.js",
+              "src/assets/assets-dashboard/bundles/mainscripts.bundle.js",
+              "src/assets/assets-dashboard/js/index.js"
+            ]
           },
           "configurations": {
             "production": {

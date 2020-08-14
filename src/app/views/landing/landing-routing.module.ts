@@ -1,12 +1,9 @@
 import { NgModule } from "@angular/core";
 import { BlogDetailsPageComponent } from './blog-details-page/blog-details-page.component';
 import { LandingV4Component } from './landing-v4/landing-v4.component';
-import { LandingV2Component } from './landing-v2/landing-v2.component';
 import { AllCoursesComponent } from './all-courses/all-courses.component';
 
 import { Routes, RouterModule } from '@angular/router';
-import { LandingV1Component } from './landing-v1/landing-v1.component';
-import { LandingV3Component } from './landing-v3/landing-v3.component';
 import { LandingV5Component } from './landing-v5/landing-v5.component';
 import { LandingV6Component } from './landing-v6/landing-v6.component';
 import { LandingV7Component } from './landing-v7/landing-v7.component';

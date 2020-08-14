@@ -1,3 +1,4 @@
+import { DashboardLayoutComponent } from './components/layouts/dashboard-layout/dashboard-layout.component';
 import { LandingLayoutComponent } from './components/layouts/landing-layout/landing-layout.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,10 +8,12 @@ import { ScrollToDirective } from './directives/scroll-to.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 const exportedClasses = [
   AuthLayoutComponent,
   ScrollToDirective,
   LandingLayoutComponent,
+  DashboardLayoutComponent
 
 ];
 
