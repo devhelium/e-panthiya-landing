@@ -5,13 +5,14 @@ import { SessionsRoutingModule } from './sessions-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { ForgotComponent } from './forgot/forgot.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     SessionsRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [SignupComponent, SigninComponent, ForgotComponent]
 })

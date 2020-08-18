@@ -1,6 +1,8 @@
-import { ApiServiceService } from './../../../serivce/api-service.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { SharedAnimations } from 'src/app/shared/animations/shared-animations';
+import { ApiServiceService } from './../../../services/api-service.service';
+import { CustomvalidationService} from '../../../services/customvalidation.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +11,7 @@ import { SharedAnimations } from 'src/app/shared/animations/shared-animations';
   animations: [SharedAnimations]
 })
 export class SignupComponent implements OnInit {
-
+  error : any;
   user = {
     first_name : '',
     last_name : '',
@@ -19,12 +21,14 @@ export class SignupComponent implements OnInit {
     confirm_password : '',
   };
   submitted = false;
-  constructor(private apiService : ApiServiceService) { }
+  constructor(
+    private apiService : ApiServiceService,
+    private customValidator : CustomvalidationService 
+    ) { }
 
   ngOnInit() {
   }
-
-  errMsg = [];
+ 
   saveUser() {
 
     const user = {
@@ -35,15 +39,20 @@ export class SignupComponent implements OnInit {
       password :this.user.password,
       confirm_password : this.user.confirm_password
     };
+    
     this.apiService.create(user)
     .subscribe(
-     response => {
-       console.log(response);
+     (response: any) => {
+       console.log(response.status);
        //this.submitted = true;
      },
-     error => {
-       console.log('error response--------------------------------'+JSON.stringify(error));
-       this.errMsg = error
+     err => {
+       console.log(err.status)
+       if (err.status === 422){
+        this.error = err.error.message[0].msg;
+       }
+      // this.error = err.error.message[0].msg; 
+      // //  console.log('error response--------------------------------'+JSON.stringify(error));
      });
   }
 
@@ -58,5 +67,4 @@ export class SignupComponent implements OnInit {
        confirm_password : '',
      };
    }
-
 }
