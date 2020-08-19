@@ -12,6 +12,7 @@ import { CustomvalidationService} from '../../../services/customvalidation.servi
 })
 
 export class SignupComponent implements OnInit {
+
   error = {
     first_name : '',
     last_name : '',
@@ -65,6 +66,7 @@ export class SignupComponent implements OnInit {
 
           console.log(this.error)
        }
+       
       // this.error = err.error.message[0].msg; 
       // //  console.log('error response--------------------------------'+JSON.stringify(error));
      });
@@ -80,5 +82,27 @@ export class SignupComponent implements OnInit {
        password:'',
        confirm_password : '',
      };
+   }
+
+   /* Text Change */
+   onChange(){
+      if(this.user.first_name){
+      this.error.first_name = null;
+      }
+      if(this.user.last_name){
+      this.error.last_name = null;
+      }
+      if(this.user.email){
+      this.error.email = null;
+      }
+      if(this.user.role){
+        this.error.role= null;
+      }
+      if(this.user.password){
+        this.error.password= null;
+      }
+      if(this.user.confirm_password){
+        this.error.confirm_password= null;
+      }
    }
 }
