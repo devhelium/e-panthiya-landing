@@ -23,22 +23,22 @@
                 </div>
                 <h1 class="mb-3 text-18" style="text-align: center;">Sign Up with E-Panthiya</h1>
                 <!-- <p class="mb-4 text-muted font-small">Lorem ipsum dolor sit amet.</p> -->
-                <form action="">
+                <form>
                     <div class="form-group">
                         <label for="firstname">First name</label>
-                        <input id="firstname" class="form-control" type="text">
+                        <input id="first_name" name="first_name" class="form-control" type="text" required [(ngModel)]="user.first_name">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Last name</label>
-                        <input id="lastname" class="form-control" type="text">
+                        <input id="last_name" name="last_name" class="form-control" type="text"  required [(ngModel)]="user.last_name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input id="email" class="form-control" type="email">
+                        <input id="email" name="email" class="form-control" type="email"  required [(ngModel)]="user.email">
                     </div>
                     <div class="form-group">
-                        <label for="type">User Type</label>
-                        <select name="type" id="type" class="form-control">
+                        <label for="type">user Type</label>
+                        <select name="role" id="role" class="form-control"  required [(ngModel)]="user.role">
                         <option value="">--Select Type--</option>
                         <option value="student">Student</option>
                         <option value="parent">Parent</option>
@@ -46,15 +46,46 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input id="password" class="form-control" type="password">
+                        <input id="password" name="password" class="form-control" type="password"  required [(ngModel)]="user.password">
                     </div>
                     <div class="form-group">
                         <label for="re-password">Password</label>
-                        <input id="re-password" class="form-control" type="password">
+                        <input id="confirm_password" name="confirm_password" class="form-control" type="password"  required [(ngModel)]="user.confirm_password">
                     </div>
-                    <button class="btn btn-primary btn-block mt-2">Sign Up</button>
+                    <button (click)='createUser()' type="submit" class="btn btn-primary btn-block mt-2" data-toggle="modal" data-target="#exampleModalCenter">Sign Up</button>
+
+
+                 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLongTitle">Email Confirmation</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <p> An confirmation email has been sent to ur email. <br>
+          Please confirm your email</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="button7" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
                 </form>
             </div>
         </div>
     </div>
 </div>
+

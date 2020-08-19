@@ -5,11 +5,14 @@ import { SessionsRoutingModule } from './sessions-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { ForgotComponent } from './forgot/forgot.component';
+// tslint:disable-next-line: import-spacing
+import{FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    SessionsRoutingModule
+    SessionsRoutingModule,
+    FormsModule
   ],
   declarations: [SignupComponent, SigninComponent, ForgotComponent]
 })
