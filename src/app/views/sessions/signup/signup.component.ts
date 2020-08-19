@@ -10,8 +10,17 @@ import { CustomvalidationService} from '../../../services/customvalidation.servi
   styleUrls: ['./signup.component.scss'],
   animations: [SharedAnimations]
 })
+
 export class SignupComponent implements OnInit {
-  error : any;
+  error = {
+    first_name : '',
+    last_name : '',
+    email : '',
+    role :'',
+    password : '',
+    confirm_password : '',
+  };
+
   user = {
     first_name : '',
     last_name : '',
@@ -43,13 +52,18 @@ export class SignupComponent implements OnInit {
     this.apiService.create(user)
     .subscribe(
      (response: any) => {
-       console.log(response.status);
+      //  console.log(response.status);
        //this.submitted = true;
      },
      err => {
-       console.log(err.status)
+
        if (err.status === 422){
-        this.error = err.error.message[0].msg;
+          // this.error = err.error.message[0].msg; 
+          err.error.message.forEach(element => {
+            this.error[element.param] = element.msg;
+          });
+
+          console.log(this.error)
        }
       // this.error = err.error.message[0].msg; 
       // //  console.log('error response--------------------------------'+JSON.stringify(error));
