@@ -9,9 +9,9 @@
                 <form action="">
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input id="email" class="form-control" type="email">
+                        <input id="email" name="email" class="form-control" type="email" required [(ngModel)]="forgotpass.email">
                     </div>
-                    <button class="btn btn-primary btn-block mt-2">Reset Password</button>
+                    <button (click)='createforgotpass()' class="btn btn-primary btn-block mt-2">Reset Password</button>
                 </form>
             </div>
         </div>

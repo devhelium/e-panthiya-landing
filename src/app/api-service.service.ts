@@ -10,8 +10,6 @@ import { HttpClient } from '@angular/common/http';
 export class ApiServiceService {
 
   baseUrl = 'https://damp-meadow-37696.herokuapp.com/';
- 
-
  // tslint:disable-next-line: no-trailing-whitespace
  
 
@@ -19,6 +17,10 @@ export class ApiServiceService {
   create(user) {
     return this.http.post(this.baseUrl + 'registration_action', user);
   }
-
-
+  logincreate(login) {
+    return this.http.post(this.baseUrl + 'login_action', login);
+  }
+  forgotpasscreate(forgotpass) {
+    return this.http.post(this.baseUrl + 'forgot_action', forgotpass);
+  }
 }

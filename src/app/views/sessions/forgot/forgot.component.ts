@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedAnimations } from 'src/app/shared/animations/shared-animations';
+import { ApiServiceService } from 'src/app/api-service.service';
 
 @Component({
   selector: 'app-forgot',
@@ -9,9 +10,32 @@ import { SharedAnimations } from 'src/app/shared/animations/shared-animations';
 })
 export class ForgotComponent implements OnInit {
 
-  constructor() { }
+  forgotpass = {
+    email: '',
+    published: false
+  };
+  submitted = false;
+
+
+  constructor(private apiServiceService: ApiServiceService ) { }
 
   ngOnInit() {
+
+  }
+  createforgotpass() {
+    const forgotpass = {
+      email: this.forgotpass.email,
+      
+    };
+    this.apiServiceService.forgotpasscreate(forgotpass)
+    .subscribe(
+      response => {
+        console.log(response);
+        this.submitted = true;
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }
