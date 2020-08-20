@@ -2,6 +2,7 @@ import { Component, OnInit, ɵConsole } from '@angular/core';
 import { SharedAnimations } from 'src/app/shared/animations/shared-animations';
 import { ApiServiceService } from './../../../services/api-service.service';
 import { CustomvalidationService} from '../../../services/customvalidation.service';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -12,7 +13,9 @@ import { CustomvalidationService} from '../../../services/customvalidation.servi
 })
 
 export class SignupComponent implements OnInit {
-
+  
+  success= false;
+  successMsg = '';
   error = {
     first_name : '',
     last_name : '',
@@ -31,12 +34,25 @@ export class SignupComponent implements OnInit {
     confirm_password : '',
   };
   submitted = false;
+
+
+  
+  closeResult: string;
   constructor(
     private apiService : ApiServiceService,
-    private customValidator : CustomvalidationService 
+    private customValidator : CustomvalidationService,
+    private modalService: NgbModal,
     ) { }
 
   ngOnInit() {
+  }
+
+  openModal() {
+    this.modalService.open('Hello', {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
  
   saveUser() {
@@ -53,6 +69,14 @@ export class SignupComponent implements OnInit {
     this.apiService.create(user)
     .subscribe(
      (response: any) => {
+       console.log(response);
+        if(response.type === 'success'){
+          // console.log("Success");
+          // this.toastr.success('Hello world!', 'Toastr fun!');
+          this.success = true;
+          this.successMsg = 'You have successfully Registered. Please Check your E-mail. ';
+          this.openModal();
+        }
       //  console.log(response.status);
        //this.submitted = true;
      },
@@ -83,7 +107,6 @@ export class SignupComponent implements OnInit {
        confirm_password : '',
      };
    }
-
    /* Text Change */
    onChange(){
       if(this.user.first_name){
@@ -105,4 +128,22 @@ export class SignupComponent implements OnInit {
         this.error.confirm_password= null;
       }
    }
+
+   open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
 }

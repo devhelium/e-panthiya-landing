@@ -12,7 +12,7 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     SessionsRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [SignupComponent, SigninComponent, ForgotComponent]
 })

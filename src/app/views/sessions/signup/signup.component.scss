@@ -2,3 +2,9 @@
     color: red; 
     text-align: center;
 }
+input.ng-invalid {
+    background-color: pink;
+  }
+  input.ng-valid {
+    background-color: lightgreen;
+  }
