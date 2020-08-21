@@ -48,7 +48,7 @@ export class SignupComponent implements OnInit {
   }
 
   openModal() {
-    this.modalService.open('Hello', {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.modalService.open('You have successfully Registered. Please Check your E-mail.', {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -73,12 +73,10 @@ export class SignupComponent implements OnInit {
         if(response.type === 'success'){
           // console.log("Success");
           // this.toastr.success('Hello world!', 'Toastr fun!');
-          this.success = true;
-          this.successMsg = 'You have successfully Registered. Please Check your E-mail. ';
-          this.openModal();
+          // this.success = true;
+          // this.successMsg = 'You have successfully Registered. Please Check your E-mail. ';
+          this.openModal()
         }
-      //  console.log(response.status);
-       //this.submitted = true;
      },
      err => {
 

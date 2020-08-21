@@ -3,8 +3,17 @@
     text-align: center;
 }
 input.ng-invalid {
-    background-color: pink;
-  }
-  input.ng-valid {
-    background-color: lightgreen;
-  }
+  background-color: pink;
+}
+input.ng-valid {
+  background-color: lightgreen;
+}
+.modal.show .modal-dialog .modal-content{
+  height:100px !important;
+  text-align: center !important;
+  padding-top: 30px!important;
+  color: darkgreen !important;
+  border-radius: 20px !important;
+  font-size:20px !important;
+  font-weight: bolder !important;
+}

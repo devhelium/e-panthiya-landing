@@ -24,7 +24,7 @@
                     <img src="./assets/images/landing/lOGO_d/logo_white.png" alt="">
                 </div>
                 <h1 class="mb-3 text-18" style="text-align: center;">Sign Up with E-Panthiya</h1>
-                <form >
+                <form name="formu1" >
                     <div class="form-group">
                         <label>First name</label>
                         <input id="first" name="first" class="form-control" type="text" [(ngModel)]="user.first_name"
@@ -112,24 +112,23 @@
                             <b>{{ error.confirm_password }}</b>
                         </div> -->
                     </div>
-                    <button class="btn btn-primary btn-block mt-2" (click)="saveUser()">Sign Up</button>
+                    <button class="btn btn-primary btn-block mt-2" id="submit" (click)="saveUser()">Sign Up</button>
                     <div *ngIf="success">
                       <b>{{successMsg}}</b>
                     </div>
-
-                    <ng-template #mymodal let-modal>
+                    <!-- <ng-template #mymodal let-modal style="text-align: center; color: red;">
                         <div class="modal-header">
                           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                             <span aria-hidden="true">×</span>
                           </button>
                         </div>
                         <div class="modal-body">
-                          This is example from ItSolutionStuff.com
+                          
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
                         </div>
-                    </ng-template>
+                    </ng-template> -->
                 </form>
             </div>
         </div>
