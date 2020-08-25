@@ -35,12 +35,9 @@ export class SigninComponent implements OnInit {
     this.apiService.login(user)
     .subscribe(
      (response: any) => {
-
     },
     err => {
-
        if (err.status === 422){
-          // this.error = err.error.message[0].msg; 
           err.error.message.forEach(element => {
             this.error[element.param] = element.msg;
           });
