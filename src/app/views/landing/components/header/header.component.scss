@@ -12,18 +12,19 @@
 }
 
 a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 .mobile_menu {
-  height: 60px;
+ //height: 100px;
   align-items: center;
   a {
-    height: 60px;
-    width: 60px;
+   // justify-content: center;
+    //height: 150px;
+    width: 175px;
   }
 }
 
@@ -49,14 +50,15 @@ a {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
   animation: 0.6s slideDown forwards;
   transition: all 0.5s ease-in-out !important;
+  background: white !important;
 }
 
 .header-fixed .container {
-  height: 60px !important;
+  height: auto !important;
 }
 
 .header-fixed .hometop-btn {
-  line-height: 60px !important;
+  line-height: auto !important;
 }
 
 .home-logo {
@@ -80,6 +82,7 @@ a {
   }
 }
 
+
 // dropdown menu
 nav {
   ul {
@@ -91,7 +94,7 @@ nav {
       display: inline-block;
       a {
         display: block;
-        color: #fff;
+        color:black;
         cursor: pointer;
       }
       ul {
@@ -240,7 +243,7 @@ li > a:only-child:after {
 }
 
 span.navbar-toggler-icon .eva {
-  -webkit-text-fill-color: #fff;
+  -webkit-text-fill-color:black;
 }
 
 @media only screen and (max-width: 765px) {

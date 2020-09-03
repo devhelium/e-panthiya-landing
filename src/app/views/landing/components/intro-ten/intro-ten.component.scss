@@ -1,0 +1,23 @@
+.appicons {
+    z-index: -1;
+    align-self: left;
+    outline: none;
+    margin-left: auto;
+    // margin-bottom: 150;
+    // -webkit-background-clip: text;
+    // background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // opacity: 0.8;
+}
+
+.iconpostion{
+    position: absolute;
+   // right: 15%;
+    bottom: 20px;
+    left: 80%;
+    z-index: 10;
+  //  padding-top: 20px;
+    // padding-bottom: 20px;
+    color: #fff;
+    text-align: left;
+}

@@ -29,15 +29,25 @@
      </div>
 
 </section> -->
-<ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)" style="margin-top: 60px;">
+<ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)"
+  style="margin-top: 60px;">
   <ng-template ngbSlide *ngFor="let img of images; index as i">
-    <div class="carousel-caption">
+    <div class="iconpostion">
       <!-- <h3>My slide {{i + 1}} title</h3> -->
+       <img class="appicons" src="./assets/images/appicons.png" width="200" height="150">
     </div>
     <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
       <div class="picsum-img-wrapper">
         <img [src]="img" alt="My image {{i + 1}} description">
       </div>
     </a>
+   
   </ng-template>
 </ngb-carousel>
+<div class="card">
+
+  <div class="card-body pt-4 pb-4 text-center">
+    <h4 class="card-title pt-2 font-weight-medium">News Line.</h4>
+
+  </div>
+</div>

@@ -1,9 +1,10 @@
-<nav id="home-header" [ngClass]="{'header-fixed': isFixed}" class="navbar navbar-expand-lg text-16 " style="background-color:blueviolet;">
+<nav navbar-brand-two d-inline-block id="home-header" class="navbar navbar-expand-lg text-16 header-fixed" style="background-color: white;">
+    <!-- navbar-brand-two d-inline-block"    /hover -->
     <div class="container">
         <div class="d-flex justify-content-between flex-grow-1 mobile_menu">
             <!-- <a class="navbar-brand d-none d-lg-inline-block" href="#">Navbar 6</a> -->
-            <a class="navbar-brand-two d-inline-block" href="#">
-                <img src="assets/images/landing/lOGO_d/logo_white.png" alt="logo">
+            <a  href="#">
+                <img  src="assets/images/landing/lOGO_d/newlogo.png" alt="logo">
             </a>
             <div class=" text-right">
                 <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
@@ -24,18 +25,18 @@
         <div class="collapse  navbar-collapse flex-grow-1 text-right" id="collapseExample" [ngbCollapse]="isCollapsed">
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item" (click)="hidemenu()">
-                    <a href="#" scrollTo="intro-wrap" class="nav-link m-2 menu-item nav-active">Home</a>
+                    <a href="#" scrollTo="intro-wrap" class="nav-link m-2 menu-item nav-active">HOME</a>
                 </li>
                 <li (click)="hidemenu()" class="nav-item">
-                    <a href="#" scrollTo="features-wrap" class="nav-link m-2 menu-item nav-active">About us</a>
+                    <a href="#" scrollTo="features-wrap" class="nav-link m-2 menu-item nav-active">PAST PAPERS</a>
                 </li>
                 <li (click)="hidemenu()" class="nav-item">
-                    <a href="#" scrollTo="services-wrap" class="nav-link m-2 menu-item nav-active">Services</a>
+                    <a href="#" scrollTo="services-wrap" class="nav-link m-2 menu-item nav-active">MODEL PAPERS</a>
                 </li>
                 <li (click)="hidemenu()" class="nav-item">
-                    <a href="#" scrollTo="works-wrap" class="nav-link m-2 menu-item">Courses</a>
+                    <a href="#" scrollTo="works-wrap" class="nav-link m-2 menu-item">BLOG</a>
                 </li>
-                <li (click)="hidemenu()" class="nav-item">
+                <!-- <li (click)="hidemenu()" class="nav-item">
                     <a href="#" scrollTo="teams-wrap" class="nav-link m-2 menu-item">Tutors</a>
                 </li>
                 <li (click)="hidemenu()" class="nav-item">
@@ -46,14 +47,14 @@
                 </li>
                 <li (click)="hidemenu()" class="nav-item">
                     <a  class="nav-link m-2 menu-item"></a>
-                </li>
+                </li> -->
                 <!-- drop down menu start -->
                 <div style="padding-right: 5px;">
-                    <li (click)="hidemenu()" class="nav-item">
+                    <!-- <li (click)="hidemenu()" class="nav-item">
                         <a routerLink="/sessions/signin" class="nav-link m-2 menu-item">SignIn</a>
-                    </li>
+                    </li> -->
                     <li (click)="hidemenu()" class="nav-item" style="padding-top: 10px;">
-                        <a routerLink="/sessions/signup" class="btn btn-warning">Register</a>
+                        <a routerLink="/sessions/signup" class="btn btn-warning">GET STARTED</a>
                     </li>
                 </div>
                 <!-- <li class="nav-item">
