@@ -247,9 +247,20 @@ span.navbar-toggler-icon .eva {
 }
 
 @media only screen and (max-width: 765px) {
-  .mobile_menu {
-    height: 60px;
-    align-items: center;
-    padding: 0px 20px;
+  // .mobile_menu {
+  //   height: 60px;
+  //   align-items: center;
+  //   padding: 0px 20px;
+  // }
+  
+  .navbar-toggler-icon {
+   background: #663399;
+    height:0.1em;
   }
 }
+
+.navbar-toggler-icon {
+  background: #663399;
+  height:0.1em;
+}
+

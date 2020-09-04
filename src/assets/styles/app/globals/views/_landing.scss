@@ -391,7 +391,8 @@
     display: flex;
     justify-content: center;
     .navbar-toggler-icon {
-      background: #fff;
+      background:blue;
+     // height: 1 !important;
     }
   }
   .navbar-toggler:focus,
