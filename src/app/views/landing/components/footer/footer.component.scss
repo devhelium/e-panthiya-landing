@@ -1,3 +1,19 @@
 .fontclour {
     color: black;
+    font-size: 14px;
 }
+.socialIcons {
+    background-image: none;  
+    background-color: black !important;
+    font-size: 24px;
+}
+
+
+
+@media only screen and (max-width: 765px) {
+
+    .coppywrite{
+        margin-top:20px;
+        padding-left: 20px;
+    }
+  }

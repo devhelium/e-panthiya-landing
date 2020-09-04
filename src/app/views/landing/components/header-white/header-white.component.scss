@@ -159,6 +159,7 @@ a {
 }
 @media only screen and (max-width: 746px) {
   a {
+    width: 100px !important;
     color: #333;
     text-decoration: none;
     background-color: transparent;
