@@ -1,8 +1,12 @@
 img {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-  }
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
 
-  .button_arrow{
-    font-size: 40px !important;
-  }
+.button_arrow {
+  font-size: 40px !important;
+}
+
+.alt-container {
+  background-color: #f8f9fa !important;
+}

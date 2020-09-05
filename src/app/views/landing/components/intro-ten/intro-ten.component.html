@@ -1,54 +1,16 @@
-<!-- <section id="intro-wrap" class="intro-ten-Wrap bg-primary text-left text-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 intro-ten-LeftSection pb-3">
-                <h1 class=" font-weight-bold text-white text-42 mb-3 t-shadow">Bring learning to people</h1>
-                <p class=" text-20 mb-4">“We need to bring learning to people instead of people to learning.” – Elliot Masie </p>
-                <div class=" mb-5 lead">
-                    <ul class="list-inline">
-                        <li class=" mb-3 ">
-                            <i class="eva eva-checkmark-outline mr-2 text-warning"></i>
-                                Engaging and effective training
-                        </li>
-                        <li class="mb-3">
-                            <i class=" eva eva-checkmark-outline mr-2 text-warning"></i> 
-                                The most versatile course experience
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6 intro-ten-RightSection d-flex align-items-center">
-                <div class="intro-ten-ProductImage">
-                    <img src="./assets/images/landing/svg/version.png" class="img-responsive" alt=""
-                        [@animate]="{value:'*',params:{x:'200px',opacity:'0',delay:'100ms', duration: '500ms'}}">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay">
-     </div>
-
-</section> -->
-<ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)"
-  style="margin-top: 60px;">
+<ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)" style="margin-top: 60px;">
   <ng-template ngbSlide *ngFor="let img of images; index as i">
     <div class="iconpostion">
-      <!-- <h3>My slide {{i + 1}} title</h3> -->
-      <img class="appicons" src="./assets/images/appicons.png" width="200" height="150">
+      <img class="appicons" src="./assets/images/appicons.png" width="200">
     </div>
 
-    <div class="picsum-img-wrapper" style="object-fit: fill;height: 600px;">
+    <div class="picsum-img-wrapper" style="object-fit: fill; max-height: 600px;">
       <img [src]="img" alt="My image {{i + 1}} description">
     </div>
-
-
   </ng-template>
 </ngb-carousel>
-<div class="card">
-
+<div class="card light-gray">
   <div class="card-body pt-4 pb-4 text-center">
-    <!-- <h4 class="card-title pt-2 font-weight-medium">News Line.</h4> -->
-    <marquee behavior="scroll" direction="left">News Feed </marquee>
-
+    <marquee behavior="scroll" direction="left">News Feed</marquee>
   </div>
 </div>
