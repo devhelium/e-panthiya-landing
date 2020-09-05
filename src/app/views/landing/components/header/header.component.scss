@@ -234,6 +234,10 @@ li > a:only-child:after {
   nav ul li:hover > ul {
     display: inline-block;
   }
+
+  nav ul li a {
+    color: white !important;
+  }
 }
 
 .navbar-toggler:hover,
@@ -248,18 +252,22 @@ span.navbar-toggler-icon .eva {
 
 @media only screen and (max-width: 765px) {
   .mobile_menu {
-  //height: 100px;
-  align-items: center;
-  a {
-   // justify-content: center;
-    //height: 150px;
-    width: 100px !important;
-  }
+    //height: 100px;
+    align-items: center;
+    a {
+    // justify-content: center;
+      //height: 150px;
+      width: 100px !important;
+    }
   }
   
   .navbar-toggler-icon {
-   background: #663399;
+    background: #663399;
     height:0.1em;
+  }
+
+  nav ul li a {
+    color: white !important;
   }
 }
 
