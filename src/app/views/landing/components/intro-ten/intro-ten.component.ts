@@ -13,7 +13,19 @@ export class IntroTenComponent implements OnInit {
   ngOnInit(): void {
     throw new Error("Method not implemented.");
   }
-  images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/1800/800`);
+  
+  //images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/1800/800`);
+
+  images = [
+    './assets/images/landing/newimg/Slider/Slider1.jpg',
+    './assets/images/landing/newimg/Slider/Slider2.jpg',
+    './assets/images/landing/newimg/Slider/Slider3.jpg',
+    './assets/images/landing/newimg/Slider/Slider4.jpg',
+    './assets/images/landing/newimg/Slider/Slider5.jpg',
+  ];
+
+  
+
 
   paused = false;
   unpauseOnArrow = false;

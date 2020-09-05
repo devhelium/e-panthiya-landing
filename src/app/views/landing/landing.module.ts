@@ -57,6 +57,7 @@ import { IntroElevenComponent } from './components/intro-eleven/intro-eleven.com
 import { LandingV11Component } from './landing-v11/landing-v11.component';
 import { AllCoursesComponent } from './all-courses/all-courses.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { AnimatedDigitComponent } from "./components/animated/animated-digit.component";
 
 @NgModule({
   imports: [
@@ -64,7 +65,6 @@ import { CoursesComponent } from './components/courses/courses.component';
     LandingRoutingModule,
     NguCarouselModule,
     NgbModule,
-
     FormsModule
   ],
   declarations: [
@@ -117,6 +117,8 @@ import { CoursesComponent } from './components/courses/courses.component';
     LandingV11Component,
     AllCoursesComponent,
     CoursesComponent,
+    AnimatedDigitComponent
+    
 
   ],
   providers: [WINDOW_PROVIDERS]

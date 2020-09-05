@@ -34,14 +34,14 @@
   <ng-template ngbSlide *ngFor="let img of images; index as i">
     <div class="iconpostion">
       <!-- <h3>My slide {{i + 1}} title</h3> -->
-       <img class="appicons" src="./assets/images/appicons.png" width="200" height="150">
+      <img class="appicons" src="./assets/images/appicons.png" width="200" height="150">
     </div>
-    <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
-      <div class="picsum-img-wrapper">
-        <img [src]="img" alt="My image {{i + 1}} description">
-      </div>
-    </a>
-   
+
+    <div class="picsum-img-wrapper" style="object-fit: fill;height: 600px;">
+      <img [src]="img" alt="My image {{i + 1}} description">
+    </div>
+
+
   </ng-template>
 </ngb-carousel>
 <div class="card">
