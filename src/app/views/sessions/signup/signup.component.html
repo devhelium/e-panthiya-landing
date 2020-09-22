@@ -1,8 +1,9 @@
 <div class="card o-hidden" [@animate]="{value:'*',params:{y:'120px',opacity:'0',delay:'100ms', duration: '400ms'}}">
     <div class="row">
-        <div class="col-md-6 text-center " style="background-size: cover;background-image: url(./assets/images/landing/Bg/register.png)">
+        <div class="col-md-6 text-center "
+            style="background-size: cover;background-image: url(./assets/images/landing/Bg/register.png)">
             <div class="pl-3 auth-right">
-                <button class="btn btn-primary btn-block btn-icon" routerLink="/sessions/signin"> 
+                <button class="btn btn-primary btn-block btn-icon" routerLink="/sessions/signin">
                     Sign in with Email
                 </button>
                 <button class="btn btn-primary btn-block btn-icon btn-google">
@@ -12,7 +13,8 @@
                     Sign in with Facebook
                 </button>
                 <div class="mt-5">
-                    <a class="text-white" href="" routerLink="/sessions/signin"><u class="forgot-password">Already have an Account</u></a>
+                    <a class="text-white" href="" routerLink="/sessions/signin"><u class="forgot-password">Already have
+                            an Account</u></a>
                 </div>
             </div>
         </div>
@@ -22,37 +24,111 @@
                     <img src="./assets/images/landing/lOGO_d/logo_white.png" alt="">
                 </div>
                 <h1 class="mb-3 text-18" style="text-align: center;">Sign Up with E-Panthiya</h1>
-                <!-- <p class="mb-4 text-muted font-small">Lorem ipsum dolor sit amet.</p> -->
-                <form action="">
+                <form name="formu1" >
                     <div class="form-group">
-                        <label for="firstname">First name</label>
-                        <input id="firstname" class="form-control" type="text">
+                        <label>First name</label>
+                        <input id="first" name="first" class="form-control" type="text" [(ngModel)]="user.first_name"
+                            [ngModelOptions]="{standalone: true}" required (keyup)="onChange()" #first="ngModel">
+                        <div *ngIf="first.invalid && (first.dirty || first.touched)">
+                            <div class="error" *ngIf="first.errors.required">
+                                <b>First name is required.</b>
+                            </div>
+                        </div>
+                        <!-- <div class="server-error" *ngIf="error.first_name">
+                            <b>{{ error.first_name }}</b>
+                        </div> -->
                     </div>
                     <div class="form-group">
-                        <label for="lastname">Last name</label>
-                        <input id="lastname" class="form-control" type="text">
+                        <label>Last name</label>
+                        <input id="last" name="last" class="form-control" type="text" [(ngModel)]="user.last_name"
+                            [ngModelOptions]="{standalone: true}" required (keyup)="onChange()" #last="ngModel">
+                        <div *ngIf="last.invalid && (last.dirty || last.touched)">
+                            <div class="error" *ngIf="last.errors.required">
+                                <b>Last name is required.</b>
+                            </div>
+                        </div>
+                        <!-- <div class="server-error" *ngIf="error.last_name">
+                            <b>{{ error.last_name }}</b>
+                        </div> -->
                     </div>
                     <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input id="email" class="form-control" type="email">
+                        <label>Email address</label>
+                        <input id="ema" name="ema" class="form-control" type="email" [(ngModel)]="user.email"
+                            [ngModelOptions]="{standalone: true}" required (keyup)="onChange()" #ema="ngModel"
+                            pattern="^\S*[@]\S*[.]\S*$">
+                        <div *ngIf="ema.invalid && (ema.dirty || ema.touched)">
+                            <div *ngIf="ema.errors.required" style="color: red; text-align: center;">
+                                <b>Email is Required.</b>
+                            </div>
+                            <div class="error" *ngIf="!ema.valid && (ema.touched || ema.dirty)">
+                                <b>Invalid Email Type.</b>
+                            </div>
+                        </div>
+                        <!-- <div class="server-error" *ngIf="error.email">
+                            <b>{{ error.email }}</b>
+                        </div> -->
                     </div>
                     <div class="form-group">
-                        <label for="type">User Type</label>
-                        <select name="type" id="type" class="form-control">
-                        <option value="">--Select Type--</option>
-                        <option value="student">Student</option>
-                        <option value="parent">Parent</option>
+                        <label>User Type</label>
+                        <select name="ro" id="ro" class="form-control" [(ngModel)]="user.role"
+                            [ngModelOptions]="{standalone: true}" required (change)="onChange()" #ro="ngModel">
+                            <option value="">--Select Type--</option>
+                            <option value="student">Student</option>
+                            <option value="parent">Parent</option>
                         </select>
+                        <div *ngIf="ro.invalid && (ro.dirty || ro.touched)">
+                            <div *ngIf="ro.errors.required" class="error">
+                                <b>User type is Required.</b>
+                            </div>
+                        </div>
+                        <!-- <div class="server-error" *ngIf="error.role"><b>{{ error.role }}</b></div> -->
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input id="password" class="form-control" type="password">
+                        <label>Password</label>
+                        <input id="pass" class="form-control" type="password" [(ngModel)]="user.password"
+                            [ngModelOptions]="{standalone: true}" required (keyup)="onChange()" minlength="6"
+                            maxlength="12" #pass="ngModel">
+                        <div *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+                            <div *ngIf="pass.errors.required" style="color: red; text-align: center;">
+                                <b>Password is Required</b>
+                            </div>
+                            <div  class="error" *ngIf="pass.errors.minlength">
+                                <b>Password must be at least 6 characters long.</b>
+                            </div>
+                        </div>
+                        <!-- <div  class="server-error" *ngIf="error.password"><b>{{ error.password }}</b></div> -->
                     </div>
                     <div class="form-group">
-                        <label for="re-password">Password</label>
-                        <input id="re-password" class="form-control" type="password">
+                        <label>Password</label>
+                        <input id="conf" name="conf" class="form-control" type="password"
+                            [(ngModel)]="user.confirm_password" [ngModelOptions]="{standalone: true}" required
+                            (keyup)="onChange()" minlength="6" #conf="ngModel">
+                        <div *ngIf="conf.invalid && (conf.dirty || conf.touched)">
+                            <div  class="error" *ngIf="conf.errors.required" >
+                                <b>Confirm Password is Required</b>
+                            </div>
+                        </div>
+                        <!-- <div  class="server-error" *ngIf="error.confirm_password">
+                            <b>{{ error.confirm_password }}</b>
+                        </div> -->
                     </div>
-                    <button class="btn btn-primary btn-block mt-2">Sign Up</button>
+                    <button class="btn btn-primary btn-block mt-2" id="submit" (click)="saveUser()">Sign Up</button>
+                    <div *ngIf="success">
+                      <b>{{successMsg}}</b>
+                    </div>
+                    <!-- <ng-template #mymodal let-modal style="text-align: center; color: red;">
+                        <div class="modal-header">
+                          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+                        </div>
+                    </ng-template> -->
                 </form>
             </div>
         </div>
